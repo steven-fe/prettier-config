@@ -1,0 +1,59 @@
+{
+  "name": "@coinstore/prettier-config",
+  "version": "1.0.0-alpha.2",
+  "description": "shared Prettier config",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "lint-all": "eslint --flag unstable_ts_config . --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint --flag unstable_ts_config --report-unused-disable-directives --max-warnings 0",
+    "tsc-all": "tsc --noEmit",
+    "prettier-check-all": "prettier . -c",
+    "prettier-check": "prettier -c",
+    "prettier-fix-all": "prettier . --ignore-unknown --write",
+    "prettier-fix": "prettier --ignore-unknown --write",
+    "prepare": "husky",
+    "prepublishOnly": "npm run prettier-check-all && npm run lint-all && npm run tsc-all"
+  },
+  "peerDependencies": {
+    "prettier": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@coinstore/prettier-config": "1.0.0-alpha.2",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/prompt-cli": "^19.3.1",
+    "@commitlint/types": "^19.0.3",
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.9.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.8",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.2.5",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.28.0",
+    "typescript": ">=4.7.4 <5.6.0",
+    "typescript-eslint": "^8.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.6.0",
+    "npm": ">=9.8.1"
+  }
+}

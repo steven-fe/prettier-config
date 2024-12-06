@@ -1,0 +1,2 @@
+npm run tsc-all
+npx --no -- lint-staged
